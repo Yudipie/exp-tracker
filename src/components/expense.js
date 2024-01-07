@@ -1,6 +1,7 @@
 import Daily from "./daily";
 import Monthly from "./monthly";
 import Weekly from "./weekly";
+import Onetime from "./one-time";
 
 const Expense = ({ exp }) => {
     const dailyExpenses = exp.filter((value) => value.type === 'daily')
@@ -32,7 +33,7 @@ const Expense = ({ exp }) => {
             <ul className="div-div">One time
             {
                singleExpenses.map((value) => (
-                    <Monthly exp={value} />
+                    <Onetime exp={value} />
                 ))
             }
                </ul>

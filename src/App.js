@@ -118,16 +118,19 @@ function App() {
 
   return (
     <>
-    <div className="container" ref={pdfref}>
+    <div className="container">
       <Header />
       <Budget mbd={mbd}/>
       <Addexp onAdd = {adding}/>
-      <Expense exp = {exp} />
-      <Total total={total} />
-      <div className={`div-div div-bud ${total > bud ? 'exceeds-budget' : ''}`}> budget = {bud}</div>
-      <div className="graphs">
-      <Barchart chartData={userdata} />
-      <Piechart chartData={userdata} />
+      <div className="f-div" ref={pdfref}>
+        <h3 style={{color: 'blue' , fontWeight: '700' , fontSize: '20px'}}>List of expenses</h3>
+        <Expense exp = {exp} />
+        <Total total={total} />
+        <div className={`div-div div-bud ${total > bud ? 'exceeds-budget' : ''}`}> budget = {bud}</div>
+        <div className="graphs">
+        <Barchart chartData={userdata} />
+        <Piechart chartData={userdata} />
+        </div>
       </div>
     </div>
     <div className="pdf-div"><button className="pdf-btn" onClick={downloadPdf}>Download Pdf</button></div>

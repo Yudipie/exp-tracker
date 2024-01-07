@@ -138,3 +138,7 @@ body{
 .choice-div{
   cursor: pointer;
 }
+
+.list{
+  visibility: hidden;
+}
