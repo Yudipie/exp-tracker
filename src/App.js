@@ -116,16 +116,17 @@ function App() {
     }
   }, [total, bud]);
 
+  const commonref = pdfref;
   return (
     <>
-    <div className="container" ref={pdfref}>
-      <Header />
+    <div className="container">
+      <Header ref={pdfref} />
       <Budget mbd={mbd}/>
       <Addexp onAdd = {adding}/>
-      <Expense exp = {exp} />
-      <Total total={total} />
-      <div className={`div-div div-bud ${total > bud ? 'exceeds-budget' : ''}`}> budget = {bud}</div>
-      <div className="graphs">
+      <Expense exp = {exp} ref={pdfref} />
+      <Total total={total} ref={pdfref} />
+      <div className={`div-div div-bud ${total > bud ? 'exceeds-budget' : ''}`} ref={pdfref}> budget = {bud}</div>
+      <div className="graphs" ref={pdfref}>
       <Barchart chartData={userdata} />
       <Piechart chartData={userdata} />
       </div>
