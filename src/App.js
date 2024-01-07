@@ -116,6 +116,7 @@ function App() {
     }
   }, [total, bud]);
 
+  const commonref = pdfref;
   return (
     <>
     <div className="container">
